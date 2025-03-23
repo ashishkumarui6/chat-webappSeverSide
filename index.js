@@ -5,6 +5,8 @@ const connectDB = require("./App/config/connectDB")
 
 const router = require("./App/routes/index")
 
+const cookieParser = require("cookie-parser")
+
 
 const app = express()
 
@@ -15,6 +17,8 @@ app.use(cors({
 }))
 
 app.use(express.json())
+
+app.use(cookieParser())
 
 
 const PORT = process.env.PORT || 3000;
