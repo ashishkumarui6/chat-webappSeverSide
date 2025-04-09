@@ -7,8 +7,10 @@ const router = require("./App/routes/index")
 
 const cookieParser = require("cookie-parser")
 
+const { app, server } = require("./App/socket/index")
 
-const app = express()
+
+// const app = express()
 
 
 app.use(cors({
@@ -31,6 +33,6 @@ app.use("/api", router)
 
 
 connectDB().then(() => {
-    app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
+    server.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
 })
 
